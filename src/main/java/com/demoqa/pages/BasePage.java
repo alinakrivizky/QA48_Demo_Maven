@@ -14,6 +14,11 @@ public class BasePage {
         element.click();
     }
     public void type(WebElement element, String text) {
-        element.sendKeys(text);
+        if (text != null) {
+            click(element);
+            element.clear();
+            element.sendKeys(text);
+        }
     }
+
 }
