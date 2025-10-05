@@ -16,4 +16,14 @@ public class AlertsTest extends TestBase {
     public void alertWaitTest(){
         new AlertsPage(driver).alertWithTimer();
 }
+@Test
+    public void alertWithSelectTest(){
+        new AlertsPage(driver).selectResult("Cancel")
+                .verifyResult("Cancel");
+}
+@Test
+    public void sendMessageAlertTest(){
+        new AlertsPage(driver).sendMessageToAlert("Hello!")
+                .verifyMessage("Hello!");
+}
 }

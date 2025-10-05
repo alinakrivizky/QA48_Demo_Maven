@@ -11,6 +11,7 @@ import java.time.Duration;
 
 public class BasePage {
    public WebDriver driver;
+   //public static JavascriptExecutor js;
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

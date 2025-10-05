@@ -1,6 +1,7 @@
 package com.demoqa.pages;
 
 import com.demoqa.pages.alertsFrameWindows.AlertsPage;
+import com.demoqa.pages.alertsFrameWindows.FramePage;
 import com.demoqa.pages.bookStore.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,5 +22,11 @@ public class SidePanel extends BasePage {
     public AlertsPage selectAlerts() {
         click(alerts);
         return new AlertsPage(driver);
+    }
+@FindBy(xpath ="//span[.='Frames']")
+WebElement frames;
+    public FramePage selectFrame() {
+        click(frames);
+        return new FramePage(driver);
     }
 }
