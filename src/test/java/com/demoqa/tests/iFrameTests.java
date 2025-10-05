@@ -14,6 +14,21 @@ public class iFrameTests extends TestBase{
     @Test
     public void iFrameTest(){
         new SidePanel(driver).selectFrame();
-        new FramePage(driver).returnListOfFrames();
+        new FramePage(driver).returnListOfFrames()
+                .switchToiFrameByIndex(1)
+                .verifyiFrameByText("This is a sample page");
+    }
+    @Test
+    public void iFrameTest2(){
+        new SidePanel(driver).selectFrame();
+        new FramePage(driver).switchToiFrameByID()
+                .verifyiFrameByText("sample page")
+                .switchToMainPage()
+                .verifyMainPageByTitle("Frames");
+    }
+    @Test
+    public void nestediFramesTest(){
+        new SidePanel(driver).selectNestedFrames();
+        new FramePage(driver).handleNestledFrames();
     }
 }

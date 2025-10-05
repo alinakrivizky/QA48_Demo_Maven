@@ -1,8 +1,10 @@
 package com.demoqa.pages;
 
 import com.demoqa.pages.alertsFrameWindows.AlertsPage;
+import com.demoqa.pages.alertsFrameWindows.BrowserWindows;
 import com.demoqa.pages.alertsFrameWindows.FramePage;
 import com.demoqa.pages.bookStore.LoginPage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,5 +30,17 @@ WebElement frames;
     public FramePage selectFrame() {
         click(frames);
         return new FramePage(driver);
+    }
+@FindBy(xpath ="//span[.='Nested Frames']")
+WebElement nestedFrames;
+    public FramePage selectNestedFrames() {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", nestedFrames);
+        return new FramePage(driver);
+    }
+    @FindBy(xpath ="//span[.='Browser Windows']")
+    WebElement browserWindows;
+    public BrowserWindows selectBrowserWindows() {
+        click(browserWindows);
+        return new BrowserWindows(driver);
     }
 }

@@ -11,7 +11,8 @@ import java.time.Duration;
 
 public class BasePage {
    public WebDriver driver;
-   //public static JavascriptExecutor js;
+   public static JavascriptExecutor js;
+
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -37,6 +38,16 @@ public class BasePage {
             //js.executeScript("window.scrllBy("+x+","+y+")");
             //click(element);
         //}
+    public void hideAd(){
+        js.executeScript("document.getElementById('adplus-anchor').style.display='none';");
+    }
+    public void hideFooter(){
+        js.executeScript("document.querySelector('footer').style.display='none';");
+    }
+    public void hideiFrames(){
+        hideAd();
+        hideFooter();
+    }
     }
 
 
