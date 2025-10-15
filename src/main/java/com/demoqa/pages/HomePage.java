@@ -20,4 +20,10 @@ public class HomePage extends BasePage {
     public void getAlertsFrameWindows() {
         click(alertsFrameWindows);
     }
+    @FindBy(css=".card:nth-child(4)")
+    WebElement widgets;
+    public SidePanel getWidgets() {
+        click(widgets);
+        return new SidePanel(driver);
+    }
 }
