@@ -4,8 +4,11 @@ import com.demoqa.pages.alertsFrameWindows.AlertsPage;
 import com.demoqa.pages.alertsFrameWindows.BrowserWindows;
 import com.demoqa.pages.alertsFrameWindows.FramePage;
 import com.demoqa.pages.bookStore.LoginPage;
+import com.demoqa.pages.interactions.DroppablePage;
 import com.demoqa.pages.widgets.MenuPage;
 import com.demoqa.pages.widgets.SelectMenuPage;
+import com.demoqa.pages.widgets.SliderPage;
+import com.demoqa.pages.widgets.ToolTipsPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -68,5 +71,23 @@ WebElement menu2;
     public MenuPage getMenu() {
         clickWithJS(menu2);
         return new MenuPage(driver);
+    }
+    @FindBy(xpath = "//span[.='Slider']")
+    WebElement slider;
+    public SliderPage selectSlider() {
+        clickWithJS(slider);
+        return new SliderPage(driver);
+    }
+    @FindBy(xpath = "//span[.='Droppable']")
+    WebElement droppable;
+    public DroppablePage selectDroppable() {
+        clickWithJS(droppable);
+        return new DroppablePage(driver);
+    }
+    @FindBy(xpath = "//span[.='Tool Tips']")
+    WebElement toolTips;
+    public ToolTipsPage selectToolTips() {
+        clickWithJS(toolTips);
+        return new ToolTipsPage(driver);
     }
 }
