@@ -32,4 +32,10 @@ public class HomePage extends BasePage {
         clickWithJS(interactions);
         return new SidePanel(driver);
     }
+    @FindBy(css=".card:nth-child(1)")
+    WebElement elements;
+    public SidePanel getElements() {
+        clickWithJS(elements);
+        return new SidePanel(driver);
+    }
 }

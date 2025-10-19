@@ -4,6 +4,7 @@ import com.demoqa.pages.alertsFrameWindows.AlertsPage;
 import com.demoqa.pages.alertsFrameWindows.BrowserWindows;
 import com.demoqa.pages.alertsFrameWindows.FramePage;
 import com.demoqa.pages.bookStore.LoginPage;
+import com.demoqa.pages.elements.ButtonsPage;
 import com.demoqa.pages.interactions.DroppablePage;
 import com.demoqa.pages.widgets.MenuPage;
 import com.demoqa.pages.widgets.SelectMenuPage;
@@ -89,5 +90,11 @@ WebElement menu2;
     public ToolTipsPage selectToolTips() {
         clickWithJS(toolTips);
         return new ToolTipsPage(driver);
+    }
+    @FindBy(xpath = "//span[.='Buttons']")
+    WebElement buttons;
+    public ButtonsPage selectButtons() {
+        clickWithJS(buttons);
+        return new ButtonsPage(driver);
     }
 }
