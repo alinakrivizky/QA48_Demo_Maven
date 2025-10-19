@@ -16,4 +16,10 @@ public class ButtonsPage extends BasePage {
       new Actions(driver).doubleClick(doubleClickBtn).perform();
         return this;
     }
+    @FindBy(id ="rightClickBtn")
+     WebElement rightClickBtn;
+    public ButtonsPage rightClick() {
+        new Actions(driver).contextClick(rightClickBtn).perform();
+        return this;
+    }
 }

@@ -16,5 +16,9 @@ public class ButtonsTest extends TestBase {
     public void doubleClickTest(){
         new ButtonsPage(driver).doubleClick();
     }
+    @Test
+    public void rightClickTest(){
+        new ButtonsPage(driver).rightClick();
+    }
 
 }
